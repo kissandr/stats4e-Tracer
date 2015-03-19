@@ -2,6 +2,18 @@
 Web archive for Solar e-Tracer 6415N photovoltaic charge manager
 
 Demo page: https://bika.idokep.hu/~andrew/solar/index.php
+# Features
+- periodically download realtime data from the charge manager, and store it in mysql database
+- draw zoomable graphs in a web page inlcuding
+--Batt.Voltage(V)
+--PV Voltage(V)
+--Batt.Current(A)
+--Charge Power(W)
+--Remote Sensor Temp.(oC)
+--Energy Gen.(kWh)
+--Local Sensor Temp.(oC)
+--Max.Batt.Voltage(V)
+--Min.Batt.Voltage(V)
 
 # INSTALLING
 - git clone https://github.com/kissandr/stats4e-Tracer
