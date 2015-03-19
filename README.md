@@ -4,8 +4,8 @@ Web archive for Solar e-Tracer 6415N photovoltaic charge manager
 Demo page: https://bika.idokep.hu/~andrew/solar/index.php
 
 # INSTALLING
-- git clone https://github.com/kissandr/stats4e-Trace
-- make stats4e-Trace directory accessible by web server (apache or nginx)
+- git clone https://github.com/kissandr/stats4e-Tracer
+- make stats4e-Tracer directory accessible by web server (apache or nginx)
 - create database
 ```
 mysqladmin create solar;
@@ -40,4 +40,7 @@ crontab -e
 */5 * * * * php cron.php 
 ```
 - check if cron.php run without problems, and pushing data to database correctly
+
+# Known issues
+- due to firmware bug, the charge manager's web interface goes down after an amount of time or request number
 
