@@ -1,6 +1,8 @@
 # stats4e-Trace
 Web archive for Solar e-Tracer 6415N photovoltaic charge manager
 
+Demo page: https://bika.idokep.hu/~andrew/solar/index.php
+
 # INSTALLING
 - git clone https://github.com/kissandr/stats4e-Trace
 - make stats4e-Trace directory accessible by web server (apache or nginx)
