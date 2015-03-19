@@ -16,12 +16,26 @@ mysql -u root solar < db_schema.sql
 ```
 GRANT ALL PERMISIONS to solar.* to solar identified by 'mypassword12345';
 ```
-- set your database passord in db.php 
-- check if your charge manager's datafeed is accessible through web browser, by visiting http://ip_address/RTMonitor?id=1
+- set your database passord in db.php
+```
+<?
+$mysql=@mysql_pconnect("localhost","solar","mypassword12345");
+...
+```
+- check if your charge manager's datafeed is accessible through web browser, by visiting http://ip_address/RTMonitor?id=1 output should be in the following format:
+```
+025.9:000.0:000.0:0000:000.0:026.0:000.0:Normal  :No Charge :053:0016.4:0018.6:
+```
 - set your charge manager's IP address in cron.php's $address variable
+```
+<?
+$address = "http://ip_address";
+...
+```
 - set crontab for getting live data 
 ```
-crontab -e*/5 * * * * php cron.php 
+crontab -e
+*/5 * * * * php cron.php 
 ```
 - check if cron.php run without problems, and pushing data to database correctly
 
