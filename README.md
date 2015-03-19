@@ -4,7 +4,8 @@ Web archive for Solar e-Tracer 6415N photovoltaic charge manager
 # INSTALLING
 - git clone https://github.com/kissandr/stats4e-Trace
 - make stats4e-Trace directory accessible by web server (apache or nginx)
-- create database: mysql -u root < db_schema.sql
+- create database: mysqladmin create solar;
+- create database schema: mysql -u root solar < db_schema.sql
 - also create permissions to solar.* database ex. GRANT ALL PERMISIONS to solar.* to solar identified by 'mypassword12345';
 - set your database passord in db.php 
 - check if your charge manager's datafeed is accessible through web browser, by visiting http://ip_address/RTMonitor?id=1
