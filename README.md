@@ -1,5 +1,5 @@
 # stats4e-Trace
-Web archive for Solar e-Tracer 6415N photovoltaic charge manager
+Web archive for Solar e-Tracer 6415N photovoltaic charge manager (http://www.epsolarpv.com/en/index.php/Product/pro_content/id/598/am_id/136)
 
 Demo page: https://bika.idokep.hu/~andrew/solar/index.php
 # Features
