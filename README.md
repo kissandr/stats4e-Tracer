@@ -53,6 +53,10 @@ $address = "http://ip_address";
 crontab -e
 */5 * * * * php cron.php 
 ```
+- crontab for only one request per hour (maybe fixes firmware bug)
+```
+1 * * * * php cronLogData.php
+```
 - check if cron.php run without problems, and pushing data to database correctly
 
 # Known issues
