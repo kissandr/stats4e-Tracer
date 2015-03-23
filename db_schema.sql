@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Gép: localhost
--- Létrehozás ideje: 2015. Már 19. 10:30
+-- Létrehozás ideje: 2015. Már 23. 11:00
 -- Kiszolgáló verziója: 5.6.23-1~dotdeb.1
 -- PHP verzió: 5.4.38-1~dotdeb.1
 
@@ -29,18 +29,18 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `log` (
   `id` int(11) NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `battVolt` float NOT NULL,
-  `pvVolt` float NOT NULL,
-  `battCurr` float NOT NULL,
-  `chargePower` int(11) NOT NULL,
-  `energyGen` float NOT NULL,
-  `maxBattVolt` float NOT NULL,
-  `minBattVolt` float NOT NULL,
-  `battState` varchar(8) NOT NULL,
-  `chargeState` varchar(10) NOT NULL,
-  `soc` int(11) NOT NULL,
-  `remoteTemp` float NOT NULL,
-  `localTemp` float NOT NULL
+  `battVolt` float DEFAULT NULL,
+  `pvVolt` float DEFAULT NULL,
+  `battCurr` float DEFAULT NULL,
+  `chargePower` int(11) DEFAULT NULL,
+  `energyGen` float DEFAULT NULL,
+  `maxBattVolt` float DEFAULT NULL,
+  `minBattVolt` float DEFAULT NULL,
+  `battState` varchar(8) DEFAULT NULL,
+  `chargeState` varchar(10) DEFAULT NULL,
+  `soc` int(11) DEFAULT NULL,
+  `remoteTemp` float DEFAULT NULL,
+  `localTemp` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `log` (
 --
 ALTER TABLE `log`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `time` (`time`);
+  ADD UNIQUE KEY `time` (`time`) USING BTREE;
 
 --
 -- A kiírt táblák AUTO_INCREMENT értéke
