@@ -18,7 +18,7 @@ elseif ($_GET['interval']=='YEAR') {
 elseif ($_GET['interval']!='DAY') {
     die("interval error");
 }
-$res = mysql_query("SELECT `".mysql_real_escape_string($_GET['attr'])."` AS value, `time` AS `timestamp`, UNIX_TIMESTAMP(`time`) AS utimestamp FROM `log` WHERE `time` > NOW() - INTERVAL 1 ".mysql_real_escape_string($_GET['interval'])." $cond;") or die ("Lekerdezes hiba!". mysql_error());
+$res = mysql_query("SELECT `".mysql_real_escape_string($_GET['attr'])."` AS value, `time` AS `timestamp`, UNIX_TIMESTAMP(`time`) AS utimestamp FROM `log` WHERE `time` > NOW() - INTERVAL 1 ".mysql_real_escape_string($_GET['interval'])." $cond ORDER BY `time` ASC;") or die ("Lekerdezes hiba!". mysql_error());
 $timestamp=0;
 while($row = mysql_fetch_assoc($res)) {
     if ($timestamp == 0 || $timestamp + $mintakoz*2.5 > $row['utimestamp']) $timestamp = $row['utimestamp'];
